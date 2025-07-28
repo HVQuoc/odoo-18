@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="menu_product_program_root" name="Program Product">
+        <menuitem id="menu_brand" name="Brands" action="product_program.action_brand"/>
+        <menuitem id="menu_category" name="Categories" action="product_program.action_category"/>
+        <menuitem id="menu_product" name="Product" action="product_program.action_product"/>
+    </menuitem>
+</odoo>
