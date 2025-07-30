@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_sale_man_program_list" model="ir.ui.view">
+        <field name="name">sale_man.program.list</field>
+        <field name="model">sale_man.program</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="id"/>
+                <field name="name_vi" string="Name"/>
+                <field name="company_id" string="Company"/>
+                <field name="creator_id" string="Author"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_sale_man_program_form" model="ir.ui.view">
+        <field name="name">sale_man.program.form</field>
+        <field name="model">sale_man.program</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+<!--                    <group>-->
+<!--                        <field name="id"/>-->
+<!--                        <field name="name_vi" string="Name (VI)"/>-->
+<!--                        <field name="name_en" string="Name (EN)"/>-->
+<!--                        <field name="company_id" string="Company"/>-->
+<!--                        <field name="creator_id" string="Author" readonly="1"/>-->
+<!--                        <field name="code"/>-->
+<!--                    </group>-->
+                    <notebook>
+                        <!-- Page for General Information -->
+                        <page string="General Information">
+                            <group>
+                                <field name="id"/>
+                                <field name="name_vi" string="Name (VI)"/>
+                                <field name="name_en" string="Name (EN)"/>
+                                <field name="company_id" string="Company"/>
+                                <field name="creator_id" string="Author" readonly="1"/>
+                                <field name="code"/>
+                            </group>
+                        </page>
+                        <!-- Page for Gift Categories -->
+                        <page string="Gift Categories">
+                            <field name="category_ids">
+                                <list>
+                                    <field name="name_vi" string="Category (VI)"/>
+                                    <field name="name_en" string="Category (EN)"/>
+                                </list>
+                            </field>
+                        </page>
+
+                      <!-- Page for Gifts -->
+                        <page string="Gifts">
+                            <field name="product_ids">
+                                <list>
+                                    <field name="name_vi" string="Category (VI)"/>
+                                    <field name="name_en" string="Category (EN)"/>
+                                    <field name="code" string="Code"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+  <!-- Kanban View -->
+    <record id="view_sale_man_program_kanban" model="ir.ui.view">
+        <field name="name">sale_man.program.kanban</field>
+        <field name="model">sale_man.program</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="name_vi"/>
+                <field name="company_id"/>
+                <field name="creator_id"/>
+                <field name="category_ids"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_card">
+                            <div class="oe_kanban_details">
+                                <strong><field name="name_vi"/></strong>
+                                <div>Company: <field name="company_id"/></div>
+                                <div>Author: <field name="creator_id"/></div>
+                                <div>
+                                    Categories:
+                                    <field name="category_ids" widget="many2many_tags" options="{'no_create': True}" context="{'default_name': 'name_vi'}"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="action_program" model="ir.actions.act_window">
+        <field name="name">Programs</field>
+        <field name="res_model">sale_man.program</field>
+        <field name="view_mode">list,form,kanban</field>
+    </record>
+
+
+</odoo>

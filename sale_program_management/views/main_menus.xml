@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="menu_sale_root" name="Sale Program Management">
+        <menuitem id="menu_brand" name="Brands" action="sale_program_management.action_brand"/>
+        <menuitem id="menu_category" name="Categories" action="sale_program_management.action_category"/>
+        <menuitem id="menu_product" name="Product Gifts" action="sale_program_management.action_product"/>
+        <menuitem id="menu_program" name="Programs" action="sale_program_management.action_program"/>
+        <menuitem id="menu_company" name="Companies" action="sale_program_management.action_company"/>
+    </menuitem>
+</odoo>

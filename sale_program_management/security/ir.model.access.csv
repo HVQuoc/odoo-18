@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_brand,access_brand,model_sale_man_brand,,1,1,1,1
+access_product,access_product,model_sale_man_product,,1,1,1,1
+access_category,access_category,model_sale_man_category,,1,1,1,1
+access_program,access_program,model_sale_man_program,,1,1,1,1
+access_company,access_company,model_sale_man_company,,1,1,1,1
