@@ -6,7 +6,7 @@ class OrderLine(models.Model):
 
     order_id = fields.Many2one('sale_man.order', string="Order", required=True, ondelete='cascade')
     product_id = fields.Many2one('sale_man.product', string="Product", required=True)
-    quantity = fields.Float(string="Quantity", default=1.0, required=True)
+    quantity = fields.Integer(string="Quantity", default=1, required=True)
     price_unit = fields.Float(string="Unit Price", required=True)
     price_subtotal = fields.Float(string="Subtotal", compute="_compute_price_subtotal", store=True)
 

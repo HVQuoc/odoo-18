@@ -13,6 +13,7 @@
             <field name="brand_id"/>
             <field name="cost"/>
             <field name="list_price"/>
+            <field name="quantity"/>
           </group>
         </sheet>
       </form>
@@ -54,6 +55,7 @@
                                   <strong><field name="name_vi"/></strong>
                                   <div>Code: <field name="code"/></div>
                                   <div>Brand: <field name="brand_id"/></div>
+                                  <div>Brand: <field name="quantity"/></div>
                               </div>
                         </div>
                     </t>

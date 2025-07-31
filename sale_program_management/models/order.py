@@ -1,4 +1,6 @@
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError
+
 
 class Order(models.Model):
     _name = 'sale_man.order'
@@ -37,9 +39,30 @@ class Order(models.Model):
         ('code_unique', 'unique(code)', 'The code must be unique!')
     ]
 
+    def _validate_order_lines(self):
+        """Validate that each order line's quantity does not exceed the product's available quantity."""
+        for order in self:
+            for line in order.order_line_ids:
+                if not line.product_id:
+                    continue  # Skip lines without a product
+                if line.quantity > line.product_id.quantity:
+                    raise ValidationError(
+                        f"The quantity ({line.quantity}) for product '{line.product_id.name_vi}' "
+                        f"exceeds the available quantity ({line.product_id.quantity})."
+                    )
+
     @api.model
     def create(self, vals):
         if vals.get('code', '/') == '/':
             vals['code'] = self.env['ir.sequence'].next_by_code('sale_man.order') or '/'
-        return super(Order, self).create(vals)
+        # Create the order and validate order lines
+        order = super(Order, self).create(vals)
+        order._validate_order_lines()
+        return order
+
+    def write(self, vals):
+        # Update the order and validate order lines
+        res = super(Order, self).write(vals)
+        self._validate_order_lines()
+        return res
 
