@@ -10,8 +10,9 @@
             <field name="name_vi" string="Name(VI)"/>
             <field name="name_en" string="Name(EN)"/>
             <field name="code"/>
-            <field name="image" widget="image"/>
             <field name="parent_id"/>
+            <field name="status"/>
+            <field name="image" widget="image" style="width: 128px; height: 128px; object-fit: contain;"/>
           </group>
           <notebook>
             <page string="Subcategories">
@@ -19,10 +20,10 @@
                 <list editable="bottom">
                   <field name="name_vi" string="Name(VI)"/>
                   <field name="code"/>
+                  <field name="status"/>
                 </list>
               </field>
             </page>
-
             <page string="Gifts">
               <field name="product_ids">
                 <list>
@@ -45,14 +46,14 @@
         <field name="name_vi" string="Name(VI)"/>
         <field name="code"/>
         <field name="parent_id"/>
+        <field name="status"/>
       </list>
     </field>
   </record>
 
-    <record id="action_category" model="ir.actions.act_window">
-        <field name="name">Categories</field>
-        <field name="res_model">sale_man.category</field>
-        <field name="view_mode">list,form</field>
-    </record>
-
+  <record id="action_category" model="ir.actions.act_window">
+    <field name="name">Categories</field>
+    <field name="res_model">sale_man.category</field>
+    <field name="view_mode">list,form</field>
+  </record>
 </odoo>

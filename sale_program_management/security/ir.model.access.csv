@@ -4,3 +4,5 @@ access_product,access_product,model_sale_man_product,,1,1,1,1
 access_category,access_category,model_sale_man_category,,1,1,1,1
 access_program,access_program,model_sale_man_program,,1,1,1,1
 access_company,access_company,model_sale_man_company,,1,1,1,1
+access_provider,access_provider,model_sale_man_provider,,1,1,1,1
+access_trans_co,access_trans_co,model_sale_man_trans_co,,1,1,1,1

@@ -10,7 +10,10 @@ class Brand(models.Model):
 
     code = fields.Char(string="Code", required=True, copy=False, readonly=True, default='/')
     image = fields.Image()
-
+    status = fields.Selection([
+        ('active', 'Active'),
+        ('inactive', 'Inactive'),
+    ], string="Status", default='active')
 
 
     _sql_constraints = [

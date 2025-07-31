@@ -10,7 +10,8 @@
             <field name="name_vi" string="Name(VI)"/>
             <field name="name_en" string="Name(EN)"/>
             <field name="code"/>
-            <field name="image" widget="image"/>
+            <field name="status" />
+            <field name="image" widget="image" style="width: 128px; height: 128px; object-fit: contain;"/>
           </group>
         </sheet>
       </form>
@@ -24,6 +25,7 @@
       <list>
         <field name="name_vi" string="Name(VI)"/>
         <field name="code"/>
+        <field name="status" />
       </list>
     </field>
   </record>

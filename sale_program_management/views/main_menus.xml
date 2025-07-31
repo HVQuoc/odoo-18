@@ -6,5 +6,6 @@
         <menuitem id="menu_product" name="Product Gifts" action="sale_program_management.action_product"/>
         <menuitem id="menu_program" name="Programs" action="sale_program_management.action_program"/>
         <menuitem id="menu_company" name="Companies" action="sale_program_management.action_company"/>
+        <menuitem id="menu_provider" name="Providers" action="sale_program_management.action_provider"/>
     </menuitem>
 </odoo>

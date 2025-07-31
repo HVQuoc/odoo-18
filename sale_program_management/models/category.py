@@ -13,7 +13,7 @@ class Category(models.Model):
     status = fields.Selection([
         ('active', 'Active'),
         ('inactive', 'Inactive'),
-    ], string="Status", default='active', required=True)
+    ], string="Status", default='active')
 
     parent_id = fields.Many2one('sale_man.category', string="Parent Category")
     child_ids = fields.One2many('sale_man.category', 'parent_id', string="Subcategories")

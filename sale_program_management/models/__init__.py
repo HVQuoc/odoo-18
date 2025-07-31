@@ -1,1 +1,1 @@
-from . import program, brand, company, category, product
+from . import program, brand, company, category, product, provider

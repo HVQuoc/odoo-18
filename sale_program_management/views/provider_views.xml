@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <record id="view_provider_form" model="ir.ui.view">
+    <field name="name">sale_man.provider.form</field>
+    <field name="model">sale_man.provider</field>
+    <field name="arch" type="xml">
+      <form string="Provider">
+        <sheet>
+          <group>
+            <field name="name_vi"/>
+            <field name="name_en"/>
+            <field name="short_name"/>
+            <field name="representative"/>
+            <field name="stk"/>
+            <field name="depot_code"/>
+            <field name="mst"/>
+            <field name="bank_name"/>
+            <field name="status"/>
+          </group>
+          <group string="Address">
+            <field name="country_id"/>
+            <field name="state_id"/>
+            <field name="district_id" />
+            <field name="ward_id" />
+            <field name="street"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="view_provider_list" model="ir.ui.view">
+    <field name="name">sale_man.provider.list</field>
+    <field name="model">sale_man.provider</field>
+    <field name="arch" type="xml">
+      <list>
+        <field name="id"/>
+        <field name="short_name"/>
+        <field name="name_vi"/>
+        <field name="representative"/>
+        <field name="mst"/>
+        <field name="stk"/>
+        <field name="bank_name"/>
+        <field name="depot_code"/>
+        <field name="status"/>
+      </list>
+    </field>
+  </record>
+
+  <record id="action_provider" model="ir.actions.act_window">
+    <field name="name">Providers</field>
+    <field name="res_model">sale_man.provider</field>
+    <field name="view_mode">list,form</field>
+  </record>
+
+</odoo>
