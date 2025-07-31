@@ -3,6 +3,7 @@ from odoo import models, fields, api
 class Program(models.Model):
     _name = 'sale_man.program'
     _description: 'Program'
+    _rec_name = 'name_vi'
 
     name_vi = fields.Char(string='Name', required=True)
     name_en = fields.Char(string='Name', required=True)

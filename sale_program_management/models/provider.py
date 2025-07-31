@@ -3,6 +3,7 @@ from odoo import models, fields, api
 class Provider(models.Model):
     _name = 'sale_man.provider'
     _description = 'Provider'
+    _rec_name = 'name_vi'
 
     name_vi = fields.Char(string="Vietnamese Name", required=True)
     name_en = fields.Char(string="English Name")

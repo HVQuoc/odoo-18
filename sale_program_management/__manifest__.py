@@ -15,6 +15,9 @@
         'views/program_views.xml',
         'views/company_views.xml',
         'views/provider_views.xml',
+        'views/trans_co_views.xml',
+        'views/order_views.xml',
+        'views/purchase_views.xml',
         'views/main_menus.xml'
     ],
     'installable': True,

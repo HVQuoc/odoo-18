@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- List View -->
+    <record id="view_order_list" model="ir.ui.view">
+        <field name="name">sale_man.order.list</field>
+        <field name="model">sale_man.order</field>
+        <field name="arch" type="xml">
+            <list string="Orders">
+                <field name="code"/>
+                <field name="receiver_tel"/>
+                <field name="order_status"/>
+                <field name="payment_status"/>
+                <field name="tracking_number"/>
+                <field name="total_amount"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_order_form" model="ir.ui.view">
+        <field name="name">sale_man.order.form</field>
+        <field name="model">sale_man.order</field>
+        <field name="arch" type="xml">
+            <form string="Order">
+                <header>
+                    <field name="order_status" widget="statusbar" statusbar_visible="draft,confirmed,shipped,delivered,cancelled" statusbar_colors="{'cancelled': 'red'}" options="{'clickable': True}"/>
+                </header>
+                <sheet>
+                    <group string="Order Information">
+                        <field name="order_time"/>
+                        <field name="receiver_tel"/>
+                        <field name="voucher_code"/>
+                        <field name="payment_status"/>
+                        <field name="program" options="{'no_create': True, 'no_open': True}"/>
+                        <field name="transportation_company" options="{'no_create': True, 'no_open': True}"/>
+                        <field name="total_amount" readonly="1"/>
+                    </group>
+                    <group string="Error Details">
+                        <field name="error_content" widget="text"/>
+                    </group>
+                    <notebook>
+                        <page string="Order Lines">
+                            <field name="order_line_ids" widget="one2many_list">
+                                <list editable="bottom">
+                                    <field name="product_id" options="{'no_create': True, 'no_open': True}"/>
+                                    <field name="quantity"/>
+                                    <field name="price_unit"/>
+                                    <field name="price_subtotal" readonly="1"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_order" model="ir.actions.act_window">
+        <field name="name">Orders</field>
+        <field name="res_model">sale_man.order</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>

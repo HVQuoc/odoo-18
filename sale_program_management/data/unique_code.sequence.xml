@@ -39,4 +39,14 @@
     <field name="number_next">1</field>
     <field name="number_increment">1</field>
   </record>
+
+  <!-- Sequence for Order -->
+  <record id="seq_program_code" model="ir.sequence">
+    <field name="name">Order Sequence</field>
+    <field name="code">sale_man.order</field>
+    <field name="prefix">ORD</field>
+    <field name="padding">4</field>
+    <field name="number_next">1</field>
+    <field name="number_increment">1</field>
+  </record>
 </odoo>

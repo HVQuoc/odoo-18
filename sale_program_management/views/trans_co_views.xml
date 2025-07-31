@@ -1,1 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- List View -->
+    <record id="view_trans_co_list" model="ir.ui.view">
+        <field name="name">sale_man.trans_co.list</field>
+        <field name="model">sale_man.trans_co</field>
+        <field name="arch" type="xml">
+            <list string="Transportation Companies">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="status"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_trans_co_form" model="ir.ui.view">
+        <field name="name">sale_man.trans_co.form</field>
+        <field name="model">sale_man.trans_co</field>
+        <field name="arch" type="xml">
+            <form string="Transportation Company">
+                <sheet>
+                    <group string="Company Information">
+                        <field name="name" />
+                        <field name="code"/>
+                        <field name="api_link" widget="url"/>
+                        <field name="token"/>
+                        <field name="private_key" widget="password"/>
+                        <field name="login_user"/>
+                        <field name="login_password" widget="password"/>
+                        <field name="status"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_trans_co" model="ir.actions.act_window">
+        <field name="name">Transportation Companies</field>
+        <field name="res_model">sale_man.trans_co</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>
