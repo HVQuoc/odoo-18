@@ -22,7 +22,8 @@ class Category(models.Model):
         'sale_man_category_product_rel',
         'category_id',
         'product_id',
-        string="Products"
+        string="Products",
+        domain="[('status', '=', 'active')]"
     )
 
     _sql_constraints = [

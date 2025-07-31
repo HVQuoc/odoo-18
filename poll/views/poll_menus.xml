@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="menu_poll" name="Polling">
+        <menuitem id="menu_polling_question" name="Polling Question Details" action="poll.action_poll_question"/>
+    </menuitem>
+</odoo>

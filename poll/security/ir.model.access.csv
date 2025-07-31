@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_poll_question_user,access.poll.question.user,model_poll_question,poll.group_poll_user,1,1,1,0
+access_poll_question_admin,access.poll.question.admin,model_poll_question,poll.group_poll_admin,1,1,1,1
+access_poll_answer_user,access.poll.answer.user,model_poll_answer,poll.group_poll_user,1,1,1,1

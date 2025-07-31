@@ -25,7 +25,7 @@
               </field>
             </page>
             <page string="Gifts">
-              <field name="product_ids">
+              <field name="product_ids" domain="[('status', '=', 'active')]">
                 <list>
                   <field name="name_vi" string="Name(VI)"/>
                   <field name="code"/>

@@ -22,6 +22,10 @@ class Product(models.Model):
     cost = fields.Float(string="Cost", default=0.0, required=True)
     quantity = fields.Integer(string="Quantity", default=0, required=True)
     display_name = fields.Char(string='Display Name', compute='_compute_display_name', store=False)
+    status = fields.Selection([
+        ('active', 'Active'),
+        ('inactive', 'Inactive'),
+    ], string="Status", default='active')
 
     brand_id = fields.Many2one('sale_man.brand', required=True)
     category_id = fields.Many2one(

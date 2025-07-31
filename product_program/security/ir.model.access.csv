@@ -1,5 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_brand,access_brand,model_product_program_brand,,1,1,1,1
-access_product,access_product,model_product_program_product,,1,1,1,1
-access_category,access_category,model_product_program_category,,1,1,1,1
-access_program,access_program,model_product_program_program,,1,1,1,1
+access_brand_pr,access_brand_pr,model_product_program_brand,,1,1,1,1
+access_product_pr,access_product_pr,model_product_program_product,,1,1,1,1
+access_category_pr,access_category_pr,model_product_program_category,,1,1,1,1

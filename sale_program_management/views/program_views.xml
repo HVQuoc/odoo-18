@@ -41,7 +41,7 @@
                             </group>
                         </page>
                         <!-- Page for Gift Categories -->
-                        <page string="Gift Categories">
+                        <page string="Gift Categories" domain="[('status', '=', 'active')]">
                             <field name="category_ids">
                                 <list>
                                     <field name="name_vi" string="Category (VI)"/>
@@ -52,7 +52,7 @@
 
                       <!-- Page for Gifts -->
                         <page string="Gifts">
-                            <field name="product_ids">
+                            <field name="product_ids" domain="[('status', '=', 'active')]">
                                 <list>
                                     <field name="name_vi" string="Category (VI)"/>
                                     <field name="name_en" string="Category (EN)"/>

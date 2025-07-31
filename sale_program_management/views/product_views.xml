@@ -9,6 +9,7 @@
           <group>
             <field name="name_vi" string="Name(VI)"/>
             <field name="name_en" string="Name(EN)"/>
+            <field name="status" string="Status"/>
             <field name="image" widget="image" style="width: 128px; height: 128px; object-fit: contain;"/>
             <field name="brand_id"/>
             <field name="cost"/>

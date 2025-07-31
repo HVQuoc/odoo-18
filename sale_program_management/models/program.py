@@ -18,7 +18,8 @@ class Program(models.Model):
         'sale_man_program_category_rel',  # relation table name
         'program_id',  # this model’s FK
         'category_id',  # target model’s FK
-        string='Gift Categories'
+        string='Gift Categories',
+        domain="[('status', '=', 'active')]"
     )
 
     product_ids = fields.Many2many(
@@ -26,7 +27,8 @@ class Program(models.Model):
         'sale_man_program_product_rel',
         'program_id',
         'product_id',
-        string='Gifts'
+        string='Gifts',
+        domain="[('status', '=', 'active')]"
     )
 
     _sql_constraints = [
