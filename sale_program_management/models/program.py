@@ -7,6 +7,10 @@ class Program(models.Model):
 
     name_vi = fields.Char(string='Name', required=True)
     name_en = fields.Char(string='Name', required=True)
+    status = fields.Selection([
+        ('active', 'Active'),
+        ('inactive', 'Inactive'),
+    ], string="Status", default='active')
 
     company_id = fields.Many2one('sale_man.company', string='Company', required=True)
     creator_id = fields.Many2one('res.users', string='Creator', default=lambda self: self.env.user, required=True)

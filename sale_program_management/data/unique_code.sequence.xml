@@ -49,4 +49,14 @@
     <field name="number_next">1</field>
     <field name="number_increment">1</field>
   </record>
+
+  <!-- Sequence for Purchase -->
+  <record id="seq_program_code" model="ir.sequence">
+    <field name="name">Purchase Sequence</field>
+    <field name="code">sale_man.purchase</field>
+    <field name="prefix">PUR</field>
+    <field name="padding">4</field>
+    <field name="number_next">1</field>
+    <field name="number_increment">1</field>
+  </record>
 </odoo>
