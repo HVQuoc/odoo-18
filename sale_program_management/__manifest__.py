@@ -5,7 +5,7 @@
     'summary': 'Manage brands, products, categories and programs',
     'sequence': 10,
     'license': 'LGPL-3',
-    'depends': ['base', 'tangerine_address_base'],
+    'depends': ['base', 'tangerine_address_base', 'sale'],
     'data': [
         'data/unique_code.sequence.xml',
         'security/ir.model.access.csv',
@@ -18,6 +18,7 @@
         'views/trans_co_views.xml',
         'views/order_views.xml',
         'views/purchase_views.xml',
+        'views/sale_order_views.xml',
         'views/main_menus.xml'
     ],
     'installable': True,
