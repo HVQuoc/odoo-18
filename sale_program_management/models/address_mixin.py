@@ -32,5 +32,5 @@ class AddressMixin(models.AbstractModel):
     @api.onchange('district_id')
     def _onchange_district(self):
         """Reset ward and street when district changes."""
-        if self.district and self.ward_id and self.ward_id.district_id != self.district_id:
+        if self.district_id and self.ward_id and self.ward_id.district_id != self.district_id:
             self.ward_id = False

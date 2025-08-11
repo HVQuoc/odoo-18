@@ -5,7 +5,7 @@
     'summary': 'Manage brands, products, categories and programs',
     'sequence': 10,
     'license': 'LGPL-3',
-    'depends': ['base', 'tangerine_address_base', 'sale'],
+    'depends': ['tangerine_address_base', 'sale'],
     'data': [
         'data/unique_code.sequence.xml',
         'security/ir.model.access.csv',

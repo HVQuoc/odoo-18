@@ -1,39 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-  <record id="view_product_form" model="ir.ui.view">
-    <field name="name">product.form</field>
-    <field name="model">sale_man.product</field>
-    <field name="arch" type="xml">
-      <form string="Product">
-        <sheet>
-          <group>
-            <field name="name_vi" string="Name(VI)"/>
-            <field name="name_en" string="Name(EN)"/>
-            <field name="status" string="Status"/>
-            <field name="image" widget="image" style="width: 128px; height: 128px; object-fit: contain;"/>
-            <field name="brand_id"/>
-            <field name="cost"/>
-            <field name="list_price"/>
-            <field name="quantity"/>
-          </group>
-        </sheet>
-      </form>
-    </field>
-  </record>
+    <record id="view_product_form" model="ir.ui.view">
+        <field name="name">product.form</field>
+        <field name="model">sale_man.product</field>
+        <field name="arch" type="xml">
+            <form string="Product">
+                <sheet>
+                    <group>
+                        <field name="name_vi" string="Name(VI)"/>
+                        <field name="name_en" string="Name(EN)"/>
+                        <field name="status" string="Status"/>
+                        <field name="image" widget="image" style="width: 128px; height: 128px; object-fit: contain;"/>
+                        <field name="brand_id"/>
+                        <field name="category_id"/>
+                        <field name="cost"/>
+                        <field name="list_price"/>
+                        <field name="quantity"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
-  <record id="view_product_list" model="ir.ui.view">
-    <field name="name">product.list</field>
-    <field name="model">sale_man.product</field>
-    <field name="arch" type="xml">
-      <list>
-        <field name="name_vi" string="Name(VI)"/>
-        <field name="code"/>
-        <field name="brand_id"/>
-      </list>
-    </field>
-  </record>
+    <record id="view_product_list" model="ir.ui.view">
+        <field name="name">product.list</field>
+        <field name="model">sale_man.product</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name_vi" string="Name(VI)"/>
+                <field name="code"/>
+                <field name="brand_id"/>
+            </list>
+        </field>
+    </record>
 
-  <!-- Kanban View -->
+    <!-- Kanban View -->
     <record id="view_product_kanban" model="ir.ui.view">
         <field name="name">product.kanban</field>
         <field name="model">sale_man.product</field>
@@ -49,15 +50,26 @@
                 <templates>
                     <t t-name="kanban-box">
                         <div class="oe_kanban_card d-flex">
-                              <div class="oe_kanban_image float-start me-3">
-                                  <field name="image" widget="image" width="128" height="128"/>
-                              </div>
-                              <div class="oe_kanban_details float-end">
-                                  <strong><field name="name_vi"/></strong>
-                                  <div>Code: <field name="code"/></div>
-                                  <div>Brand: <field name="brand_id"/></div>
-                                  <div>Brand: <field name="quantity"/></div>
-                              </div>
+                            <div class="oe_kanban_image float-start me-3">
+                                <field name="image" widget="image" width="128" height="128"/>
+                            </div>
+                            <div class="oe_kanban_details float-end">
+                                <strong>
+                                    <field name="name_vi"/>
+                                </strong>
+                                <div>Code:
+                                    <field name="code"/>
+                                </div>
+                                <div>Brand:
+                                    <field name="brand_id"/>
+                                </div>
+                                <div>Category:
+                                    <field name="category_id"/>
+                                </div>
+                                <div>Quantity:
+                                    <field name="quantity"/>
+                                </div>
+                            </div>
                         </div>
                     </t>
                 </templates>
@@ -65,9 +77,9 @@
         </field>
     </record>
 
-  <record id="action_product" model="ir.actions.act_window">
+    <record id="action_product" model="ir.actions.act_window">
         <field name="name">Products</field>
         <field name="res_model">sale_man.product</field>
         <field name="view_mode">kanban,list,form</field>
-  </record>
+    </record>
 </odoo>

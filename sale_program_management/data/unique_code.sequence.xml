@@ -41,7 +41,7 @@
   </record>
 
   <!-- Sequence for Order -->
-  <record id="seq_program_code" model="ir.sequence">
+  <record id="seq_order_code" model="ir.sequence">
     <field name="name">Order Sequence</field>
     <field name="code">sale_man.order</field>
     <field name="prefix">ORD</field>
@@ -51,7 +51,7 @@
   </record>
 
   <!-- Sequence for Purchase -->
-  <record id="seq_program_code" model="ir.sequence">
+  <record id="seq_purchase_code" model="ir.sequence">
     <field name="name">Purchase Sequence</field>
     <field name="code">sale_man.purchase</field>
     <field name="prefix">PUR</field>
@@ -61,7 +61,7 @@
   </record>
 
   <!-- Sequence for Purchase Order -->
-  <record id="seq_program_code" model="ir.sequence">
+  <record id="seq_purchase_order_code" model="ir.sequence">
     <field name="name">Purchase Order Sequence</field>
     <field name="code">sale_man.sale_order</field>
     <field name="prefix">PO</field>

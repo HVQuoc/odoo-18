@@ -7,6 +7,7 @@
       <form string="Category">
         <sheet>
           <group>
+            <field name="id" readonly="1"/>
             <field name="name_vi" string="Name(VI)"/>
             <field name="name_en" string="Name(EN)"/>
             <field name="code"/>
@@ -16,11 +17,10 @@
           </group>
           <notebook>
             <page string="Subcategories">
-              <field name="child_ids">
-                <list editable="bottom">
+              <field name="child_ids" >
+                <list>
                   <field name="name_vi" string="Name(VI)"/>
                   <field name="code"/>
-                  <field name="status"/>
                 </list>
               </field>
             </page>

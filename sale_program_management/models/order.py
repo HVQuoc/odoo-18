@@ -39,8 +39,8 @@ class Order(models.Model):
         ('code_unique', 'unique(code)', 'The code must be unique!')
     ]
 
+    @api.constrains('order_line_ids')
     def _validate_order_lines(self):
-        """Validate that each order line's quantity does not exceed the product's available quantity."""
         for order in self:
             for line in order.order_line_ids:
                 if not line.product_id:
@@ -55,14 +55,20 @@ class Order(models.Model):
     def create(self, vals):
         if vals.get('code', '/') == '/':
             vals['code'] = self.env['ir.sequence'].next_by_code('sale_man.order') or '/'
-        # Create the order and validate order lines
         order = super(Order, self).create(vals)
-        order._validate_order_lines()
         return order
 
     def write(self, vals):
-        # Update the order and validate order lines
+        old_status_map = {rec.id: rec.order_status for rec in self}
         res = super(Order, self).write(vals)
-        self._validate_order_lines()
+        for order in self:
+            if order.order_status == 'delivered' and old_status_map.get(order.id) != 'delivered':
+                for line in order.order_line_ids:
+                    product = line.product_id
+                    if product:
+                        if product.quantity < line.quantity:
+                            raise ValidationError(
+                                f"Cannot deliver order: Product '{product.display_name}' has insufficient quantity."
+                            )
+                        product.write({'quantity': product.quantity - line.quantity})
         return res
-

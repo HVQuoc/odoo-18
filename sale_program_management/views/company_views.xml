@@ -8,6 +8,7 @@
                 <field name="name" string="Company Name"/>
                 <field name="address"/>
                 <field name="phone"/>
+                <field name="tax_code" />
             </list>
         </field>
     </record>
@@ -23,6 +24,9 @@
                         <field name="name" string="Company Name"/>
                         <field name="address"/>
                         <field name="phone"/>
+                        <field name="tax_code" string="Tax Code"/>
+                        <field name="email" string="Email"/>
+                        <field name="website" string="Website"/>
                     </group>
                 </sheet>
             </form>

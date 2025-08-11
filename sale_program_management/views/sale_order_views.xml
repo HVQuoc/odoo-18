@@ -6,32 +6,32 @@
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//notebook" position="inside">
-                <page string="Additional Info">
-                    <group string="Types and Actions">
-                        <field name="po_number"/>
-                        <field name="po_path"/>
-                        <field name="print_legal"/>
-                        <field name="order_type"/>
-                        <field name="order_status"/>
-                    </group>
-                    <group string="Receiver">
-                        <field name="receiver_name" />
-                        <field name="receiver_email" />
-                        <field name="receiver_phone" />
-                    </group>
-                    <group string="Delivery">
-                        <field name="delivery_code"/>
-                        <field name="delivery_note"/>
-                    </group>
-                    <group string="Address">
-                        <field name="country_id"/>
-                        <field name="state_id"/>
-                        <field name="district_id" />
-                        <field name="ward_id" />
-                        <field name="street"/>
-                    </group>
-                </page>
-            </xpath>
+                    <page string="Additional Info">
+                        <group string="Types and Actions">
+                            <field name="po_number"/>
+                            <field name="po_path"/>
+                            <field name="print_legal"/>
+                            <field name="order_type"/>
+                            <field name="order_status"/>
+                        </group>
+                        <group string="Receiver">
+                            <field name="receiver_name" />
+                            <field name="receiver_email" />
+                            <field name="receiver_phone" />
+                        </group>
+                        <group string="Delivery">
+                            <field name="delivery_code"/>
+                            <field name="delivery_note"/>
+                        </group>
+                        <group string="Address">
+                            <field name="country_id"/>
+                            <field name="state_id"/>
+                            <field name="district_id" />
+                            <field name="ward_id" />
+                            <field name="street"/>
+                        </group>
+                    </page>
+                </xpath>
            </field>
         </record>
 </odoo>

@@ -7,3 +7,6 @@ class Company(models.Model):
     name = fields.Char(string='Company Name', required=True)
     address = fields.Char(string='Address')
     phone = fields.Char(string='Phone')
+    tax_code = fields.Char(string='Tax ID')
+    email = fields.Char(string='Email')
+    website = fields.Char(string='Website')
