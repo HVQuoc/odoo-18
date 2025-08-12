@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="report_product_info">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <h1 class="text-center">Product Information</h1>
+                    <!-- Updated table to show complete product information -->
+                    <table class="table table-bordered" style="width:100%; margin-top:20px;">
+                        <tr>
+                            <th>Vietnamese Name</th>
+                            <th>English Name</th>
+                            <th>Code</th>
+                            <th>Sale Price</th>
+                            <th>Cost</th>
+                            <th>Quantity</th>
+                        </tr>
+                        <t t-foreach="docs" t-as="doc">
+                            <tr>
+                                <td><t t-esc="doc.name_vi"/></td>
+                                <td><t t-esc="doc.name_en"/></td>
+                                <td><t t-esc="doc.code"/></td>
+                                <td><t t-esc="doc.list_price"/></td>
+                                <td><t t-esc="doc.cost"/></td>
+                                <td><t t-esc="doc.quantity"/></td>
+                            </tr>
+                        </t>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_report_products_custom" model="ir.actions.report">
+        <field name="name">Product Report</field>
+        <field name="model">sale_man.product</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">sale_program_management.report_product_info</field>
+        <field name="report_file">sale_program_management.report_product_info</field>
+        <field name="print_report_name">'Product-Info'</field>
+        <field name="binding_model_id" ref="model_sale_man_product"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

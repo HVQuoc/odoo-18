@@ -19,7 +19,8 @@
         'views/order_views.xml',
         'views/purchase_views.xml',
         'views/sale_order_views.xml',
-        'views/main_menus.xml'
+        'views/main_menus.xml',
+        'reports/product_templates.xml',
     ],
     'installable': True,
     'application': True,
