@@ -10,3 +10,4 @@ access_order,access_order,model_sale_man_order,,1,1,1,1
 access_order_line,access_order_line,model_sale_man_order_line,,1,1,1,1
 access_purchase,access_purchase,model_sale_man_purchase,,1,1,1,1
 access_purchase_line,access_purchase_line,model_sale_man_purchase_line,,1,1,1,1
+access_product_report,access_product_report,model_sale_man_product_report_excel,,1,1,1,1

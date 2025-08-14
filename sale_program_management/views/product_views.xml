@@ -27,6 +27,9 @@
         <field name="model">sale_man.product</field>
         <field name="arch" type="xml">
             <list>
+                <header>
+                    <button name="action_export_excel" string="Export Excel" type="object" class="oe_highlight"/>
+                </header>
                 <field name="name_vi" string="Name(VI)"/>
                 <field name="code"/>
                 <field name="brand_id"/>
